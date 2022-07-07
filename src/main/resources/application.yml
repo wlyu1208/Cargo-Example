@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/cargo_db
+    username: postgres
+    password: 
+
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+
+  liquibase:
+    enabled: false

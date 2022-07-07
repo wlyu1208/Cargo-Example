@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    container_name: cargo_database
+    image: postgres
+    environment:
+      POSTGRES_USER : postrgres
+      POSTGRES_PASSWORD : 
+      POSTGRES_DB : cargo_db
+    ports:
+     - "5432:5432"
+  pgadmin:
+    container_name: cargo_pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL : cargo@postgres.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
