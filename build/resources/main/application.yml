@@ -9,5 +9,5 @@ spring:
     path match:
       matching-strategy: ant_path_matcher
 
-  liquibase:
-    enabled: false
+#  liquibase:
+#    enabled: false

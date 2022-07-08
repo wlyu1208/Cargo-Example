@@ -4,9 +4,10 @@ services:
   db:
     container_name: cargo_database
     image: postgres
+    restart: always
     environment:
-      POSTGRES_USER : postrgres
-      POSTGRES_PASSWORD : 
+      POSTGRES_USER : postgres
+      POSTGRES_PASSWORD : postgres
       POSTGRES_DB : cargo_db
     ports:
      - "5432:5432"
@@ -15,7 +16,7 @@ services:
     image: dpage/pgadmin4
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL : cargo@postgres.com
+      PGADMIN_DEFAULT_EMAIL : postgres@cargo.com
       PGADMIN_DEFAULT_PASSWORD: postgres
     ports:
       - "5050:80"

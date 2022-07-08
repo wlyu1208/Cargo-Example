@@ -3,11 +3,11 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/cargo_db
     username: postgres
-    password: 
+    password: postgres
 
   mvc:
     path match:
       matching-strategy: ant_path_matcher
 
-  liquibase:
-    enabled: false
+#  liquibase:
+#    enabled: false
