@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: "001"
+      author: wwlyu
+      changes:
+        - createTable:
+            tableName: car_brand
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: cargo
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: passenger_count
+                  type: int
+              - column:
+                  name: load_capacity
+                  type: int
+              - column:
+                  name: brand_id
+                  type: int
+        - addForeignKeyConstraint:
+            baseTableName: cargo
+            baseColumnNames: brand_id
+            referencedTableName: car_brand
+            referencedColumnNames: id
+            constraintName: cargo_car_brand_fk
+
